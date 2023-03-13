@@ -1,0 +1,8 @@
+{
+  "issuer": "https://auth.beta.pennconnected.com/auth/realms/PENN",
+  "clientID": "food-safety",
+  "redirectUri": "httpspcfs://callback",
+  "postLogoutRedirectUri": "io.curity.client:/logoutcallback",
+  "scope": "openid profile"
+}
+

@@ -1,0 +1,6 @@
+framework module Pods_FoodSafetyiOSMobileUI_FoodSafetyiOSMobileUIUITests {
+  umbrella header "Pods-FoodSafetyiOSMobileUI-FoodSafetyiOSMobileUIUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

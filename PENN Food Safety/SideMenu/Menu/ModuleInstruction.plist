@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Entry</string>
+		<key>StoryBoard</key>
+		<string>Cabinet</string>
+		<key>Controller</key>
+		<string>EntryInstructionViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Information</string>
+		<key>StoryBoard</key>
+		<string>Cabinet</string>
+		<key>Controller</key>
+		<string>InformationViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Custom List</string>
+		<key>StoryBoard</key>
+		<string>Cabinet</string>
+		<key>Controller</key>
+		<string>ModuleInstructionViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Product List</string>
+		<key>StoryBoard</key>
+		<string>Cabinet</string>
+		<key>Controller</key>
+		<string>CommanCustomListViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Supplier List</string>
+		<key>StoryBoard</key>
+		<string>Cabinet</string>
+		<key>Controller</key>
+		<string>SupplierListViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Delivery Type</string>
+		<key>StoryBoard</key>
+		<string>Cabinet</string>
+		<key>Controller</key>
+		<string>DeliveryTypesViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Temperature</string>
+		<key>StoryBoard</key>
+		<string>Cabinet</string>
+		<key>Controller</key>
+		<string>TemperatureViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Signature</string>
+		<key>StoryBoard</key>
+		<string>Cabinet</string>
+		<key>Controller</key>
+		<string>SignatureViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>QR Code</string>
+		<key>StoryBooard</key>
+		<string>Cabinet</string>
+		<key>Controller</key>
+		<string>QRScannerViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Photo</string>
+		<key>StoryBoard</key>
+		<string>Cabinet</string>
+		<key>Controller</key>
+		<string>PhotosViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Date Time</string>
+		<key>StoryBoard</key>
+		<string>Cabinet</string>
+		<key>Controller</key>
+		<string>DateTimeViewController</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Loop</string>
+		<key>StoryBoard</key>
+		<string>&quot;&quot;</string>
+		<key>Controller</key>
+		<string>&quot;&quot;</string>
+	</dict>
+</array>
+</plist>
