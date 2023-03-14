@@ -25,7 +25,7 @@ struct CabinetsModel: Codable {
 // MARK: - DataClass
 struct DataClass : Codable {
     let count: Int?
-    let results: [Result]?
+    let results: [ResultType]?
     
     enum CodingKeys: String, CodingKey {
         case count = "count"
@@ -41,7 +41,7 @@ struct DataClass : Codable {
 }
 
 // MARK: - Result
-struct Result : Codable {
+struct ResultType : Codable {
     let added: Bool?
     let address: Int?
     let child: Child?

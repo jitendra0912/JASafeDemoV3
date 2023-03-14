@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		10770353EDA2A611DD8A586B /* Pods_FoodSafetyiOSMobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA3284EDF0A26BEE6FEB9B3 /* Pods_FoodSafetyiOSMobileUITests.framework */; };
 		3F334B3B28E40BD6008F4BBD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F334B3A28E40BD6008F4BBD /* BaseViewController.swift */; };
+		3F573ADD29C05EC30035EDEF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F573ADA29C05EC30035EDEF /* HTTPMethod.swift */; };
+		3F573ADE29C05EC30035EDEF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F573ADB29C05EC30035EDEF /* NetworkError.swift */; };
+		3F573ADF29C05EC30035EDEF /* JANetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F573ADC29C05EC30035EDEF /* JANetworkService.swift */; };
 		3F9E60D3292BF3C10076ED8F /* GraphHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9E60D2292BF3C10076ED8F /* GraphHelper.swift */; };
 		3FC9684028DF3F860016D5BB /* FSMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FC9683F28DF3F860016D5BB /* FSMenu.plist */; };
 		3FC9684228DF41E20016D5BB /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC9684128DF41E20016D5BB /* MenuViewModel.swift */; };
@@ -204,6 +207,9 @@
 		06E99B2A98162BDE39C8346E /* Pods-FoodSafetyiOSMobileUI-FoodSafetyiOSMobileUIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodSafetyiOSMobileUI-FoodSafetyiOSMobileUIUITests.debug.xcconfig"; path = "Target Support Files/Pods-FoodSafetyiOSMobileUI-FoodSafetyiOSMobileUIUITests/Pods-FoodSafetyiOSMobileUI-FoodSafetyiOSMobileUIUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0D696FCBD0B7AB2ADC3C1B21 /* Pods-FoodSafetyiOSMobileUI-FoodSafetyiOSMobileUIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodSafetyiOSMobileUI-FoodSafetyiOSMobileUIUITests.release.xcconfig"; path = "Target Support Files/Pods-FoodSafetyiOSMobileUI-FoodSafetyiOSMobileUIUITests/Pods-FoodSafetyiOSMobileUI-FoodSafetyiOSMobileUIUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3F334B3A28E40BD6008F4BBD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3F573ADA29C05EC30035EDEF /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		3F573ADB29C05EC30035EDEF /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		3F573ADC29C05EC30035EDEF /* JANetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JANetworkService.swift; sourceTree = "<group>"; };
 		3F9E60D2292BF3C10076ED8F /* GraphHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphHelper.swift; sourceTree = "<group>"; };
 		3FC9683F28DF3F860016D5BB /* FSMenu.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FSMenu.plist; sourceTree = "<group>"; };
 		3FC9684128DF41E20016D5BB /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
@@ -422,6 +428,16 @@
 				FDA3284EDF0A26BEE6FEB9B3 /* Pods_FoodSafetyiOSMobileUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F573AD929C05EC30035EDEF /* JANetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				3F573ADA29C05EC30035EDEF /* HTTPMethod.swift */,
+				3F573ADB29C05EC30035EDEF /* NetworkError.swift */,
+				3F573ADC29C05EC30035EDEF /* JANetworkService.swift */,
+			);
+			path = JANetworkLayer;
 			sourceTree = "<group>";
 		};
 		3FC9683E28DF3F640016D5BB /* Menu */ = {
@@ -656,6 +672,7 @@
 		A5E448D728F930AF005EB93E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3F573AD929C05EC30035EDEF /* JANetworkLayer */,
 				A5E448D828F930AF005EB93E /* RefrigerationAPI.swift */,
 				A5E448E428FB234A005EB93E /* AlarmAPI.swift */,
 				A5522490291BC40A007FCDF1 /* ResolveReasonAPI.swift */,
@@ -1042,12 +1059,14 @@
 				A56941CE289A7FE100A5476B /* User+API.swift in Sources */,
 				A58E5EAD28CEEB6F002621C5 /* FSApplicationConfigLoader.swift in Sources */,
 				A5FA10E828C1C276001ACAB3 /* LoadingView.swift in Sources */,
+				3F573ADE29C05EC30035EDEF /* NetworkError.swift in Sources */,
 				A5522484291A2438007FCDF1 /* AlarmDetailViewController.swift in Sources */,
 				A56941C3289A709D00A5476B /* ReachabilityManager.swift in Sources */,
 				A5B9AAE328B5223300C77C01 /* HomeViewController.swift in Sources */,
 				AA2E6E2F28FC278D005CB087 /* CabinetViewModel.swift in Sources */,
 				A5A5C5B0296EF05C00D06624 /* ViewLogDetailViewController.swift in Sources */,
 				A54AB4A728D2DEA800594662 /* DashBoardModel.swift in Sources */,
+				3F573ADD29C05EC30035EDEF /* HTTPMethod.swift in Sources */,
 				A586F7CF29881B4C00D7AFB9 /* DeliveryTypeAPI.swift in Sources */,
 				A5CA7C482988F3D50007CF31 /* GetProductListAPI.swift in Sources */,
 				A5645D6D2978043E00039684 /* Passcode.swift in Sources */,
@@ -1134,6 +1153,7 @@
 				A5CA7C4A2988F46A0007CF31 /* GetProductModel.swift in Sources */,
 				A56941D728A36EC800A5476B /* ResponseHandler+Extension.swift in Sources */,
 				AA2E6E1128FC0882005CB087 /* AlarmsTableViewCell.swift in Sources */,
+				3F573ADF29C05EC30035EDEF /* JANetworkService.swift in Sources */,
 				A5B4787B28D9B1FF00C4A781 /* FSHelper.swift in Sources */,
 				A5DDC66B296D66090008097C /* ModuleLogModelRequest.swift in Sources */,
 				A5CA7C50298904A70007CF31 /* GetSupplierListAPI.swift in Sources */,

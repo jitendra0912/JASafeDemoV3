@@ -22,7 +22,7 @@ class CabinetViewModel {
     var unitID: String?
     
     // Dependency Injection (DI)
-    init(cabinetsModel: Result) {
+    init(cabinetsModel: ResultType) {
         cellAlarmColor =  .white
         self.childSensorDescription =  cabinetsModel.child?.sensors?[0].sensorDescription
         self.unitID = cabinetsModel.unitID
