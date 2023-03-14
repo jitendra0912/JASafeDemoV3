@@ -811,32 +811,42 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXu-le-BOt">
-                                                            <rect key="frame" x="330" y="11" width="30" height="30"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" systemColor="systemGrayColor"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" image="CrossMark"/>
-                                                            <connections>
-                                                                <action selector="cancelCheckMarkBtnPressed:" destination="Zam-U6-ub1" eventType="touchUpInside" id="fxp-g7-OW6"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8X-FW-eOT">
-                                                            <rect key="frame" x="290" y="11" width="30" height="30"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" systemColor="systemGrayColor"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" image="CheckMark"/>
-                                                            <connections>
-                                                                <action selector="correctCheckMarkBtnPressed:" destination="Zam-U6-ub1" eventType="touchUpInside" id="OLs-gn-Agq"/>
-                                                            </connections>
-                                                        </button>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L1i-zs-xA8">
+                                                            <rect key="frame" x="290" y="11" width="70" height="30"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8X-FW-eOT">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                    <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="Ogt-fH-JIX"/>
+                                                                        <constraint firstAttribute="width" constant="30" id="e8T-cG-Dhn"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" image="CheckMark"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXu-le-BOt">
+                                                                    <rect key="frame" x="40" y="0.0" width="30" height="30"/>
+                                                                    <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="6PO-ph-rPj"/>
+                                                                        <constraint firstAttribute="width" constant="30" id="nkQ-gN-GIU"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" image="CrossMark"/>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="POx-ay-Qr8"/>
+                                                            </constraints>
+                                                        </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="Pma-ys-287" firstAttribute="leading" secondItem="7Tf-Oj-H0q" secondAttribute="leading" constant="10" id="GV9-mP-HZV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="L1i-zs-xA8" secondAttribute="trailing" constant="10" id="PPw-w5-avb"/>
                                                         <constraint firstAttribute="bottom" secondItem="Pma-ys-287" secondAttribute="bottom" constant="17" id="gN9-HV-E6U"/>
                                                         <constraint firstItem="Pma-ys-287" firstAttribute="centerY" secondItem="7Tf-Oj-H0q" secondAttribute="centerY" id="p9g-WP-srw"/>
+                                                        <constraint firstItem="L1i-zs-xA8" firstAttribute="centerY" secondItem="7Tf-Oj-H0q" secondAttribute="centerY" id="uJE-2m-KRF"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -2256,8 +2266,8 @@
         <image name="CheckBoxDelSected" width="21" height="21"/>
         <image name="CheckMark" width="14.666666984558105" height="10.333333015441895"/>
         <image name="CrossMark" width="12" height="12.333333015441895"/>
-        <image name="bell" catalog="system" width="125" height="128"/>
         <image name="bell" width="16" height="16"/>
+        <image name="bell" catalog="system" width="125" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

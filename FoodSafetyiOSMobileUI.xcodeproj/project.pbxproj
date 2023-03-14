@@ -733,8 +733,8 @@
 			children = (
 				3FFBE6102924B58B00AEAD7E /* Highcharts.xcframework */,
 				3FFBE6122924B59900AEAD7E /* OptionsProvider.swift */,
-				3FFBE60C2924B4F400AEAD7E /* DataCaloriesIn.json */,
 				3FFBE60B2924B4F400AEAD7E /* DataSources.json */,
+				3FFBE60C2924B4F400AEAD7E /* DataCaloriesIn.json */,
 				A5C569E0299B5E8100FA5023 /* SignatureView.swift */,
 				3FFBE60A2924B4F400AEAD7E /* JACustomButton.swift */,
 				A5645D6A2978043E00039684 /* Passcode.swift */,

@@ -13,6 +13,7 @@ class ModuleInstructionViewController: BaseViewController {
     @IBOutlet weak var heightConstraints: NSLayoutConstraint!
     @IBOutlet weak var moduleInstructionSearchView: JASearchBar!
     @IBOutlet weak var instructionListName: UILabel!
+    var dictForButtonStaus = [[String:Bool]]()
 
     @IBOutlet weak var moduleInstructionTableView: UITableView!
     
@@ -40,33 +41,45 @@ class ModuleInstructionViewController: BaseViewController {
         
     }
     
-    @IBAction func cancelCheckMarkBtnPressed(_ sender: UIButton) {
+    @objc func cancelCheckMarkBtnPressed(sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        if(sender.isSelected == true)
-        {
-            sender.backgroundColor = #colorLiteral(red: 0.9221704602, green: 0, blue: 0.1108471975, alpha: 1)
-            cell?.correctCheckMarkBtn.backgroundColor = #colorLiteral(red: 0.6627451181, green: 0.6627451181, blue: 0.6627451181, alpha: 1)
-            sender.isSelected = false
-            moduleInstructionButton.isEnabled = true
-            moduleInstructionButton.backgroundColor = #colorLiteral(red: 0, green: 0.3234525919, blue: 0.645539403, alpha: 1)
+        let point = sender.convert(CGPoint.zero, to: moduleInstructionTableView)
+        let indexValue = moduleInstructionTableView.indexPathForRow(at: point)
+        guard let indxPath =  indexValue else  {
+            return
         }
+        self.dictForButtonStaus[indxPath.row]["isCorrectCheckStatus"] =  false
+        self.dictForButtonStaus[indxPath.row]["isCancelCheckStstus"] =  true
+        moduleInstructionTableView.reloadRows(at: [indxPath], with: .none)
+
         
     }
-    @IBAction func correctCheckMarkBtnPressed(_ sender: UIButton) {
+    @objc func correctCheckMarkBtnPressed(sender: UIButton) {
+        
         sender.isSelected = !sender.isSelected
-        if(sender.isSelected == true)
-        {
-            sender.backgroundColor = #colorLiteral(red: 0.167740792, green: 0.7454681993, blue: 0, alpha: 1)
-            cell?.cancelCheckMarkBtn.backgroundColor = #colorLiteral(red: 0.6627451181, green: 0.6627451181, blue: 0.6627451181, alpha: 1)
-            sender.isSelected = false
-            moduleInstructionButton.isEnabled = true
-            moduleInstructionButton.backgroundColor = #colorLiteral(red: 0, green: 0.3234525919, blue: 0.645539403, alpha: 1)
+        let point = sender.convert(CGPoint.zero, to: moduleInstructionTableView)
+        let indexValue = moduleInstructionTableView.indexPathForRow(at: point)
+     
+        guard let indxPath =  indexValue else  {
+            return
         }
+        self.dictForButtonStaus[indxPath.row]["isCorrectCheckStatus"] =  true
+        self.dictForButtonStaus[indxPath.row]["isCancelCheckStstus"] =  false
+        moduleInstructionTableView.reloadRows(at: [indxPath], with: .none)
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.updateMenuButton(type: .back)
+        makeLocalDicForButtonStatus()
+    }
+    private func makeLocalDicForButtonStatus() {
+        for _ in itemDataListArray {
+            var tempDict = [String:Bool]()
+             tempDict["isCorrectCheckStatus"] =  false
+             tempDict["isCancelCheckStstus"] =  false
+             self.dictForButtonStaus.append(tempDict)
+        }
     }
     
     @IBAction func moduleInstructionButtonPressed(_ sender: Any) {
@@ -115,7 +128,14 @@ extension ModuleInstructionViewController: UITableViewDelegate, UITableViewDataS
             cell!.customDataList = self.itemDataListArray[indexPath.row] as? ItemDataList
 
         }
-//        cell!.customDataList = self.itemDataListArray[indexPath.row] as? ItemDataList
+        
+        let myDict = self.dictForButtonStaus[indexPath.row]
+               (myDict["isCorrectCheckStatus"] == true) ?  (cell!.correctCheckMarkBtn.backgroundColor = #colorLiteral(red: 0.167740792, green: 0.7454681993, blue: 0, alpha: 1)) : (cell!.correctCheckMarkBtn.backgroundColor =  #colorLiteral(red: 0.6627451181, green: 0.6627451181, blue: 0.6627451181, alpha: 1))
+               (myDict["isCancelCheckStstus"] == true) ? (cell!.cancelCheckMarkBtn.backgroundColor = #colorLiteral(red: 0.9221704602, green: 0, blue: 0.1108471975, alpha: 1)) :  ( cell!.cancelCheckMarkBtn.backgroundColor =  #colorLiteral(red: 0.6627451181, green: 0.6627451181, blue: 0.6627451181, alpha: 1))
+               
+        cell!.correctCheckMarkBtn.addTarget(self, action: #selector(correctCheckMarkBtnPressed(sender:)), for: .touchUpInside)
+        cell!.cancelCheckMarkBtn.addTarget(self, action: #selector(cancelCheckMarkBtnPressed(sender:)), for: .touchUpInside)
+  
         return cell!
     }
     

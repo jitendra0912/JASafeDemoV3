@@ -34,8 +34,8 @@ class PassCodeViewController: BaseViewController {
                     self.setupCustomMessageData(title: FSHelper.share.instructionTypeArray[0])
                     self.passCodeView.code = ""
                 } else {
-                    self.loadController(instructionName:  FSHelper.share.loopInstructionTypeArray[0])
-                    self.setupLoopInstructionCustomMessageData(title: FSHelper.share.loopInstructionTypeArray[0])
+//                    self.loadController(instructionName:  FSHelper.share.loopInstructionTypeArray[0])
+//                    self.setupLoopInstructionCustomMessageData(title: FSHelper.share.loopInstructionTypeArray[0])
 
 
                 }
