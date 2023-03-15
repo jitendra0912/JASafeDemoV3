@@ -42,9 +42,13 @@ extension HeaderViewController
             FSHelper.share.controllerCount = 0
         } else {
             print("back")
-            (FSHelper.share.isLooploopInstructions ==  true) ? (FSHelper.share.loopControllerCount = FSHelper.share.loopControllerCount - 1) :
-                (FSHelper.share.controllerCount = FSHelper.share.controllerCount - 1)
+//            (FSHelper.share.isLooploopInstructions ==  true) ? (FSHelper.share.loopControllerCount = FSHelper.share.loopControllerCount - 1) :
+//                (FSHelper.share.controllerCount = FSHelper.share.controllerCount - 1)
            
+            FSHelper.share.loopControllerCount = FSHelper.share.loopControllerCount - 1
+            
+            FSHelper.share.controllerCount = FSHelper.share.controllerCount - 1
+            
             NavigationHelper.helper.contentNavController?.popViewController(animated: true)
             menuType = .menu
             var imageBtn = UIImage()
