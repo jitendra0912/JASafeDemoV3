@@ -31,10 +31,11 @@ class TemperatureViewController: BaseViewController,UITextFieldDelegate {
     }
     
     @IBAction func TemperatureNextButtonPressed(_ sender: Any) {
-        if isMoveToController() {
-            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
-            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
-        }
+//        if isMoveToController() {
+//            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
+//            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
+//        }
+        self.isMoveToController()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

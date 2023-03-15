@@ -83,10 +83,11 @@ class ModuleInstructionViewController: BaseViewController {
     }
     
     @IBAction func moduleInstructionButtonPressed(_ sender: Any) {
-        if isMoveToController() {
-            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
-            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
-        }
+//        if isMoveToController() {
+//            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
+//            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
+//        }
+        self.isMoveToController()
     }
     
     func setUpData(){
@@ -144,10 +145,11 @@ extension ModuleInstructionViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isMoveToController() {
-            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
-            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
-        }
+//        if isMoveToController() {
+//            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
+//            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
+//        }
+        self.isMoveToController()
     }
 }
 

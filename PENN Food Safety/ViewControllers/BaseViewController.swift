@@ -32,19 +32,35 @@ class BaseViewController: UIViewController {
 extension BaseViewController {
     func loadController(instructionName:String) {
         
-        
-        
-        
         if instructionName == "Loop" {
-                FSHelper.share.controllerCount = FSHelper.share.controllerCount + 1
+            
+            
+            FSHelper.share.isLooploopInstructions = true
+           
+            FSHelper.share .loopControllerCount = FSHelper.share.loopControllerCount
+            
             if let dict =  FSHelper.share.getControllerFromPlist(titleName: FSHelper.share.loopInstructionTypeArray[0]) {
-                    if let controller =  NSClassFromString(SWIFT_CLASS_STRING(dict["Controller"] ?? "") ?? "") {
-                        self.navigateToViewController(FSConstants.Storyboard.cabinetStoryboard.instantiateViewController(withIdentifier: String(describing: controller)))
-                    }
+                
+               
+                if let controller =  NSClassFromString(SWIFT_CLASS_STRING(dict["Controller"] ?? "") ?? "") {
+                    self.navigateToViewController(FSConstants.Storyboard.cabinetStoryboard.instantiateViewController(withIdentifier: String(describing: controller)))
                 }
+            }
+            
+            
         }
+      
+        
+        
         else {
-            FSHelper.share.controllerCount = FSHelper.share.controllerCount + 1
+            if  ((FSHelper.share.loopControllerCount == FSHelper.share.loopInstructionTypeArray.count - 1) &&  FSHelper.share.isLooploopInstructions == true) {
+                FSHelper.share.isLooploopInstructions = false
+            }
+            
+            if  FSHelper.share.isLooploopInstructions == false {
+                FSHelper.share.controllerCount = FSHelper.share.controllerCount + 1
+            }
+          
             if let dict =  FSHelper.share.getControllerFromPlist(titleName: instructionName) {
                 if let controller =  NSClassFromString(SWIFT_CLASS_STRING(dict["Controller"] ?? "") ?? "") {
                     self.navigateToViewController(FSConstants.Storyboard.cabinetStoryboard.instantiateViewController(withIdentifier: String(describing: controller)))
@@ -60,11 +76,28 @@ extension BaseViewController {
       
     }
     
-    func isMoveToController()->Bool {
-        if (FSHelper.share.controllerCount <= (FSHelper.share.instructionTypeArray.count - 1)){
-            return true
+//    func isMoveToController()->Bool {
+//        if (FSHelper.share.controllerCount <= (FSHelper.share.instructionTypeArray.count - 1)){
+//
+//            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
+//            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
+//
+//        return true
+//        }
+//        return false
+//    }
+    
+    func isMoveToController() {
+        if (FSHelper.share.controllerCount <= (FSHelper.share.instructionTypeArray.count - 1)) && FSHelper.share.isLooploopInstructions == false {
+            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
+            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
         }
-        return false
+        else if (FSHelper.share.isLooploopInstructions) && (FSHelper.share.loopControllerCount <= (FSHelper.share.loopInstructionTypeArray.count - 1))  {
+            FSHelper.share.loopControllerCount = FSHelper.share.loopControllerCount + 1
+            loadController(instructionName:  FSHelper.share.loopInstructionTypeArray[FSHelper.share.loopControllerCount])
+           // setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
+            
+        }
     }
     
     func nextButtonEnabled()->Bool {

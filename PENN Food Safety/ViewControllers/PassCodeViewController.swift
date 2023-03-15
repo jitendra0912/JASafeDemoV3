@@ -29,16 +29,19 @@ class PassCodeViewController: BaseViewController {
         passCodeView.becomeFirstResponder()
         passCodeView.didFinishedEnterCode = {code in
             if code == self.validatePin {
-                if self.isMoveToController() {
-                    self.loadController(instructionName: FSHelper.share.instructionTypeArray[0])
-                    self.setupCustomMessageData(title: FSHelper.share.instructionTypeArray[0])
-                    self.passCodeView.code = ""
-                } else {
-                    self.loadController(instructionName:  FSHelper.share.loopInstructionTypeArray[0])
-                    self.setupLoopInstructionCustomMessageData(title: FSHelper.share.loopInstructionTypeArray[0])
-
-
-                }
+                
+                self.isMoveToController()
+//                if self.isMoveToController() {
+//                    self.loadController(instructionName: FSHelper.share.instructionTypeArray[0])
+//                    self.setupCustomMessageData(title: FSHelper.share.instructionTypeArray[0])
+//                    self.passCodeView.code = ""
+//                }
+//                else {
+//                    self.loadController(instructionName:  FSHelper.share.loopInstructionTypeArray[0])
+//                    self.setupLoopInstructionCustomMessageData(title: FSHelper.share.loopInstructionTypeArray[0])
+//
+//
+//                }
 
                 LoadingView.show()
             }else {

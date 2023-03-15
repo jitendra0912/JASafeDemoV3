@@ -72,14 +72,15 @@ extension DeliveryTypesViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isMoveToController() {
-            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
-            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
-        }else{
-            loadController(instructionName:  FSHelper.share.loopInstructionTypeArray[FSHelper.share.controllerCount])
-            self.setupLoopInstructionCustomMessageData(title: FSHelper.share.loopInstructionTypeArray[FSHelper.share.controllerCount - 1])
-
-        }
+//        if isMoveToController() {
+//            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
+//            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
+//        }else{
+//            loadController(instructionName:  FSHelper.share.loopInstructionTypeArray[FSHelper.share.controllerCount])
+//            self.setupLoopInstructionCustomMessageData(title: FSHelper.share.loopInstructionTypeArray[FSHelper.share.controllerCount - 1])
+//
+//        }
+        self.isMoveToController()
     }
 }
 

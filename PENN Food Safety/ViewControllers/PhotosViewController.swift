@@ -32,10 +32,11 @@ class PhotosViewController: BaseViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func photosNextButtonPressed(_ sender: Any) {
-        if isMoveToController() {
-            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
-            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
-        }
+//        if isMoveToController() {
+//            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
+//            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
+//        }
+        self.isMoveToController()
     }
     
     func showImagePicker(selectedSource: UIImagePickerController.SourceType) {

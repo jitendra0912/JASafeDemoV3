@@ -45,10 +45,20 @@ class QRScannerViewController: BaseViewController {
     
  
     @IBAction func qrScannerNextButtonPressed(_ sender: Any) {
-        if isMoveToController() {
-            loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
-            setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
-        }
+//        if isMoveToController() {
+//
+//            if FSHelper.share.isLooploopInstructions {
+//                loadController(instructionName:  FSHelper.share.loopInstructionTypeArray[FSHelper.share.loopControllerCount])
+//                setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
+//            }else{
+//                loadController(instructionName:  FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount])
+//                setupCustomMessageData(title: FSHelper.share.instructionTypeArray[FSHelper.share.controllerCount - 1])
+//            }
+            
+        self.isMoveToController()
+            
+       
+     //   }
     }
     
     override func viewWillAppear(_ animated: Bool) {

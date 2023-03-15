@@ -29,9 +29,12 @@ class FSHelper : NSObject {
     var customListTitleName: String?
     var instructionTypeFilteredArray = [String]()
     var controllerCount:Int = 0
+    var loopControllerCount:Int = 0
     var titleCount:Int = 0
     var isNextButtonEnabled = true
     var customisedListID: Int?
+    
+    var isLooploopInstructions =  false
     
     var customisedTitleName: String?
     
